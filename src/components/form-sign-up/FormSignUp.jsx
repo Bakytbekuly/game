@@ -72,8 +72,20 @@ export const FormSignUp = ({ handleClick }) => {
                 />
             </FormControl>
 
-
+            {/* <FormControl sx={{ width: "100%", mb: 1 }}>
+                <TextField
+                    label="Пароль"
+                    variant="outlined"
+                    type="password"
+                    {...register("password", {
+                        required: required(),
+                        validate: validatePassword
+                    })}
+                    {...getInputState(formState, "password")}
+                />
+            </FormControl> */}
             <FormControl sx={{ width: "100%", mb: 1 }} >
+                {/* <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel> */}
                 <TextField
                     id="outlined-adornment-password"
                     type={values.password ? 'text' : 'password'}
@@ -102,6 +114,7 @@ export const FormSignUp = ({ handleClick }) => {
             </FormControl>
 
             <FormControl sx={{ width: "100%", mb: 1 }} >
+                {/* <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel> */}
                 <TextField
                     id="outlined-adornment-password"
                     type={values.showPassword ? 'text' : 'password'}
@@ -122,6 +135,7 @@ export const FormSignUp = ({ handleClick }) => {
                     label="Повторите пороль"
                     {...register("cPassword", {
                         required: required(),
+                        // validate: validateCPassword,
                         validate: (value) => getValues("password") === value || "Пароли не совпадают"
                     })}
                     {...getInputState(formState, "cPassword")}
